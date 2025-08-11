@@ -33,10 +33,11 @@ const Home = () => {
         }}
       />
       <div aria-hidden className="absolute inset-0 z-10 bg-black/40" />
-      <SpotlightCard
-        className="relative z-20 max-w-lg w-[100%] text-white text-center"
-        spotlightColor="rgb(122, 67, 142)"
-      >
+      <div className="relative z-20 w-full pl-20 md:pl-0 px-4 md:px-0 flex justify-center">
+        <SpotlightCard
+          className="relative z-20 max-w-lg w-[100%] text-white text-center"
+          spotlightColor="rgb(122, 67, 142)"
+        >
         <div className="flex flex-col items-center gap-2">
           <div className="flex flex-col items-center gap-4">
             <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white">
@@ -93,7 +94,8 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </SpotlightCard>
+        </SpotlightCard>
+      </div>
       <Dock
         className="z-20"
         orientation="vertical"
