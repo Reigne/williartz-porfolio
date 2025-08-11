@@ -95,7 +95,7 @@ const Commissions = () => {
               >
                 <div className="flex flex-col justify-end h-full gap-2 w-full p-8">
                   <div className="flex flex-col gap-2 bg-black/40 p-4 w-fit backdrop-blur-xs cursor-target hover:bg-black/90 transition-all duration-600">
-                    <p className="text-4xl text-white font-bold">100$</p>
+                    <p className="text-4xl text-white font-bold">110$</p>
                     <p className="text-xl text-white">FULL BODY CHARACTER</p>
                   </div>
                 </div>
