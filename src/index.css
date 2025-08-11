@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --animate-shine: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+/* Class we toggle to hide the system cursor globally */
+.hide-native-cursor, .hide-native-cursor * {
+  cursor: none !important;
+}
+
+/* Apply Lexend globally */
+:root, html, body, #root {
+  font-family: 'Lexend', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
