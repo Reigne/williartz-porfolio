@@ -1,6 +1,12 @@
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter, FaUser } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaUser,
+} from "react-icons/fa";
 import { FaFileContract } from "react-icons/fa6";
 import { HiMiniPaintBrush } from "react-icons/hi2";
 import { AiFillInstagram } from "react-icons/ai";
@@ -42,8 +48,11 @@ const Home = () => {
       <Metadata title="Home" description="williartz is a digital artist" />
 
       <TargetCursor targetSelector=".cursor-target, button" />
-      <div aria-hidden className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div
+      <div
+        aria-hidden
+        className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+      >
+        {/* <motion.div
           className="absolute inset-0 blur-[0.9px] will-change-transform"
           style={{
             x,
@@ -54,14 +63,35 @@ const Home = () => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
-        />
+        /> */}
+
+        <motion.div
+          className="absolute inset-0 will-change-transform"
+          style={{ x, y, scale: 1.08 }}
+        >
+          <video
+            className="w-full h-full object-cover blur-[0.9px]"
+            src="/background.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        </motion.div>
       </div>
       <div aria-hidden className="absolute inset-0 z-10 bg-black/40" />
       <motion.div
         className="relative z-20 w-full pl-20 md:pl-0 px-4 md:px-0 flex justify-center"
         initial={{ opacity: 0, y: 80, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ type: "spring", stiffness: 160, damping: 16, mass: 0.6, delay: 0.2, duration: 2 }}
+        transition={{
+          type: "spring",
+          stiffness: 160,
+          damping: 16,
+          mass: 0.6,
+          delay: 0.2,
+          duration: 2,
+        }}
       >
         <SpotlightCard
           className="relative z-20 max-w-lg w-[100%] text-white text-center"
@@ -140,7 +170,6 @@ const Home = () => {
           </div>
         </SpotlightCard>
       </motion.div>
-      
     </div>
   );
 };
