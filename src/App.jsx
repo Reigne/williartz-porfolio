@@ -1,14 +1,18 @@
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { GoHome } from "react-icons/go";
+import { FaDollarSign } from "react-icons/fa6";
+import { BiCoffeeTogo } from "react-icons/bi";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { FaRegFileAlt } from "react-icons/fa";
+import { FaFileContract } from "react-icons/fa6";
 
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Commissions from "./pages/Commission/Commissions";
 import Dock from "./components/Dock/Dock";
-import { GoHome } from "react-icons/go";
-import { FaDollarSign } from "react-icons/fa6";
-import { BiCoffeeTogo } from "react-icons/bi";
-import { MdOutlineMailOutline } from "react-icons/md";
+import DeveloperCredit from "./components/Layout/DeveloperCredit";
+import TOS from "./pages/TOS/TOS";
 
 function App() {
   const navigate = useNavigate();
@@ -26,9 +30,16 @@ function App() {
       className: "cursor-target",
     },
     {
+      icon: <FaFileContract className="text-2xl text-white" />,
+      label: "Terms of Service",
+      onClick: () => navigate("/tos"),
+      className: "cursor-target",
+    },
+    {
       icon: <BiCoffeeTogo className="text-2xl text-white" />,
       label: "Buy me a coffee",
-      onClick: () => window.open("https://buymeacoffee.com/williartz", "_blank"),
+      onClick: () =>
+        window.open("https://buymeacoffee.com/williartz", "_blank"),
       className: "cursor-target",
     },
     {
@@ -43,8 +54,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/commission" element={<Commissions />} />
+        <Route path="/tos" element={<TOS />} />
       </Routes>
-      <Dock className="z-20" orientation="vertical" side="left" items={dockItems} />
+      <Dock
+        className="z-20"
+        orientation="vertical"
+        side="left"
+        items={dockItems}
+      />
+      <DeveloperCredit />
     </>
   );
 }
