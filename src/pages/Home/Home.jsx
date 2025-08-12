@@ -1,12 +1,6 @@
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import {
-  FaEnvelope,
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaUser,
-} from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import { FaFileContract } from "react-icons/fa6";
 import { HiMiniPaintBrush } from "react-icons/hi2";
 import { AiFillInstagram } from "react-icons/ai";
@@ -145,14 +139,13 @@ const Home = () => {
                 <p className="text-lg font-medium">Commission</p>
                 <HiMiniPaintBrush className="text-2xl" />
               </Link>
-              <a
-                href="https://x.com/williartz"
-                target="_blank"
+              <Link
+                to="/tos"
                 className="cursor-target flex justify-between items-center gap-2 border-2 border-white border-dashed text-white px-6 py-4 rounded-full cursor-pointer hover:bg-white hover:text-black transition-all duration-600 bg-white/20"
               >
                 <p className="text-lg font-medium">Terms of Service</p>
                 <FaFileContract className="text-2xl" />
-              </a>
+              </Link>
             </div>
 
             {/* created by */}
